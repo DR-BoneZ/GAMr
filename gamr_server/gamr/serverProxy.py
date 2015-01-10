@@ -47,7 +47,8 @@ def getUserInfo(user):
 
 @app.route("/user/add/<user>", methods=['POST'])
 def newUser(user):
-	if (json.loads(getGetUserInfo(user))["error"] == "404"):
+	print getGetUserInfo(user)
+	if ("error" in json.loads(getGetUserInfo(user)) and json.loads(getGetUserInfo(user))["error"] == "404"):
 		adduser(user, request.form['password'], request.form['description'], request.form['games'], request.form['platforms'], request.form['genres'], request.form['seriousness'], request.form['reputation'], request.form['miscQuals'])
 		return getGetUserInfo(user);
 	else:
@@ -74,6 +75,34 @@ def delUser(user):
 		cur.execute("DELETE FROM users WHERE username = '" + user + "';")
 		conn.commit()
 	return getGetUserInfo(user)
+
+@app.route("/post", methods=['GET', 'POST'])
+def search():
+	return '{"error":"500", "description":"Internal Server Error: This feature isn\'t implemented yet. Check back later."}'
+
+@app.route("/post/add", methods=['POST'])
+def addPost():
+	conn = psycopg2.connect("dbname=gamr user=gamr")
+	cur = conn.cursor()
+	cur.execute("SELECT * FROM users WHERE username = '" + request.form['username'] + "';")
+        ret = cur.fetchone()
+        if (ret != None and ret[1] == request.form['password']):
+		cur.execute("INSERT INTO posts(id, username, description, game, platform, genre, seriousness, reputation, PLTorTLP, miscQuals) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (request.form['username'] + "" + time.gmtime(0), request.form['username'], request.form['description'], request.form['game'], request.form['platform'], request.form['genre'], request.form['seriousness'], request.form['reputation'], request.form['PLTorTLP'], request.form['miscQuals']))
+		conn.commit()
+	return request.form['username'] + "" + time.gmtime(0)
+
+@app.route("/post/my", methods=['POST'])
+def getMyPosts():
+	conn = psycopg2.connect("dbname=gamr user=gamr")
+	cur = conn.cursor()
+	cur.execute("SELECT * FROM users WHERE username = '" + request.form['username'] + "';")
+	ret = cur.fetchone()
+	if (ret != None and ret[1] == request.form['password']):
+		cur.execute("SELECT * FROM posts WHERE username = '" + request.form['username'] + "';")
+		ret = json.dumps(cur.fetchall())
+	else:
+		ret = '{"error":"404", "description":"Not Found: The specified username and password combination are invalid."}'
+	return ret
 
 #print(getUserInfo("BoneZ"))
 
