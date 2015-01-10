@@ -1,5 +1,5 @@
 from flask import Flask, request
-import psycopg2, json
+import psycopg2, json, re
 
 app = Flask(__name__)
 
@@ -47,6 +47,8 @@ def getUserInfo(user):
 
 @app.route("/user/add/<user>", methods=['POST'])
 def newUser(user):
+	if re.match('^[\w-]+$', user) is None:
+		return '{"error":"403", "description":"Forbidden: Please use only alphanumeric characters and dashes."}'
 	print getGetUserInfo(user)
 	if ("error" in json.loads(getGetUserInfo(user)) and json.loads(getGetUserInfo(user))["error"] == "404"):
 		adduser(user, request.form['password'], request.form['description'], request.form['games'], request.form['platforms'], request.form['genres'], request.form['seriousness'], request.form['reputation'], request.form['miscQuals'])
@@ -103,6 +105,18 @@ def getMyPosts():
 	else:
 		ret = '{"error":"404", "description":"Not Found: The specified username and password combination are invalid."}'
 	return ret
+
+@app.route("/post/del", methods=['POST'])
+def delPost():
+	conn = psycopg2.connect("dbname=gamr user=gamr")
+	cur = conn.cursor()
+	cur.execute("SELECT * FROM users WHERE username = '" + request.form['username'] + "';")
+	ret = cur.fetchone()
+	if (ret != None and ret[1] == request.form['password']):
+		cur.execute("DELETE FROM posts WHERE id = '" + request.form['id'] + "';")
+		return getMyPosts()
+	else:
+		return '{"error":"404", "description":"Not Found: The specified username and password combination are invalid."}'
 
 #print(getUserInfo("BoneZ"))
 
