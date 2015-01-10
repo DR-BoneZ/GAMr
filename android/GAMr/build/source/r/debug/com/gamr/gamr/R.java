@@ -21,8 +21,8 @@ public final class R {
         public static final int login_status=0x7f070001;
         public static final int login_status_message=0x7f070002;
         public static final int password=0x7f070005;
+        public static final int response_text=0x7f070000;
         public static final int sign_in_button=0x7f070007;
-        public static final int textView=0x7f070000;
     }
     public static final class layout {
         public static final int activity_home=0x7f030000;
