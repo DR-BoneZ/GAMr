@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GAMr/GAMr.iml" filepath="$PROJECT_DIR$/GAMr/GAMr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GAMrProject.iml" filepath="$PROJECT_DIR$/GAMrProject.iml" />
+    </modules>
+  </component>
+</project>
+
