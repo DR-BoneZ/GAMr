@@ -30,8 +30,8 @@ def getUserInfo(user):
 	conn = psycopg2.connect("dbname=gamr user=gamr")
 	cur = conn.cursor()
 	if request.method == "GET":
-		cur.execute("SELECT * FROM users WHERE username = '" + user + "';");
-		ret = cur.fetchone();
+		cur.execute("SELECT * FROM users WHERE username = '" + user + "';")
+		ret = cur.fetchone()
 		retjson = '{ "username":"' + ret[0] + '", "description":"' + ret[2] + '", "games":' + ret[3] + ', "platforms":' + ret[4] + ', "genres":' + ret[5] + ', "seriousness":' + str(ret[6]) + ', "reputation":' + str(ret[7]) + ', "miscQuals":' + ret[8] + ' }'
 		return retjson
 	elif request.method == "POST":
@@ -53,6 +53,16 @@ def newUser(user):
 	else:
 		return '{"error":"420", "description":"Method Failure: The specified username already exists."}'
 
+@app.route("/edit/user/<user>", methods=['PUT'])
+def editUser(user):
+	conn = psycopg2.connect("dbname=gamr user=gamr")
+	cur = conn.cursor()
+	cur.execute("SELECT * FROM users WHERE username = '" + user + "';")
+	ret = cur.fetchone()
+	if (ret != None and ret[1] == request.form['password']):
+		cur.execute("UPDATE users SET " + json.dumps(request.form).replace('{"', '').replace('": "', ' = "').replace('", "', '", ').replace('"}', '"').replace('"', "'") + " WHERE username = '" + user + "';")
+		conn.commit()
+	return getGetUserInfo(user)
 
 #print(getUserInfo("BoneZ"))
 
