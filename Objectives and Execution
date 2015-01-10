@@ -2,7 +2,20 @@ GAMr
 
 Objectives: 
 -Profile Generation
+  Firebase Submission System
+  Data-trawling backend to search Firebase
+    Outside algorithms
+    Proxy Server query to Firebase, search, submit filtered data
+  Kernel request submit profiles, display results
+  
 -Search Methods
+  Search Tags: 
+    Platform
+    Genre
+    Game
+    Seriousness
+    Miscellaneous Qualification
+    
 -Chat Function
 -Game Specifications
 -Reputation System
