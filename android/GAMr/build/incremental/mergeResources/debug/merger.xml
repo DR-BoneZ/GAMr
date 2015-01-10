@@ -41,15 +41,15 @@
                 </string>
                 <string name="error_invalid_email" >This email address is invalid
                 </string>
-                <string name="login_progress_signing_in" >Signing in…
+                <string name="prompt_email" >Email
                 </string>
                 <string name="action_sign_in_register" >Sign in
                 </string>
-                <string name="prompt_email" >Email
-                </string>
-                <string name="action_sign_in_short" >Sign in
+                <string name="login_progress_signing_in" >Signing in…
                 </string>
                 <string name="prompt_password" >Password
+                </string>
+                <string name="action_sign_in_short" >Sign in
                 </string>
                 <string name="error_incorrect_password" >This password is incorrect
                 </string>
@@ -138,6 +138,16 @@ center
                 path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/activity_home.xml"
                 qualifiers=""
                 type="layout" />
+            <file
+                name="activity_register"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/activity_register.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="login_logo"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/drawable-hdpi/login_logo.png"
+                qualifiers="hdpi"
+                type="drawable" />
         </source>
         <source path="/Users/beni/dev/gamr/GAMr/android/GAMr/build/res/rs/debug" />
     </dataSet>

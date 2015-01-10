@@ -34,13 +34,12 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/username_login"
                 android:singleLine="true"
                 android:maxLines="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:hint="@string/prompt_email" />
+                android:hint="Username" />
 
             <EditText
                 android:id="@+id/password"
@@ -62,6 +61,22 @@
                 android:paddingLeft="32dp"
                 android:paddingRight="32dp"
                 android:layout_gravity="right" />
+
+            <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Make An Account"
+                    android:id="@+id/registerBtn"
+                    android:layout_gravity="right|center_vertical"
+                    android:textSize="10sp"/>
+
+            <ImageView
+                    android:src="@drawable/login_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/loginLogo"
+                    android:layout_gravity="center"/>
 
         </LinearLayout>
 

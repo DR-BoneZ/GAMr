@@ -13,6 +13,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -39,7 +40,6 @@ import java.util.List;
  */
 public class LoginActivity extends Activity {
     private static final String BASE_LOGIN_URL = "http://54.67.36.137:5000/user/";
-    private static final String BASE_ADD_USER_URL = "/add/user/";
 
     public static final String EXTRA_EMAIL = "Username"; // Key for default username
 
@@ -52,6 +52,7 @@ public class LoginActivity extends Activity {
     private View mLoginFormView;
     private View mLoginStatusView;
     private TextView mLoginStatusMessageView;
+    private Button registerBtn;
 
     private UserLoginTask mUserLoginTask = null;
 
@@ -63,7 +64,7 @@ public class LoginActivity extends Activity {
 
         // Set up the login form.
         mUsername = getIntent().getStringExtra(EXTRA_EMAIL);
-        mUsernameView = (EditText) findViewById(R.id.email);
+        mUsernameView = (EditText) findViewById(R.id.username_login);
         mUsernameView.setText(mUsername);
 
         mPasswordView = (EditText) findViewById(R.id.password);
@@ -86,6 +87,14 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View view) {
                 attemptLogin();
+            }
+        });
+
+        registerBtn = (Button) findViewById(R.id.registerBtn);
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToRegister();
             }
         });
     }
@@ -149,10 +158,8 @@ public class LoginActivity extends Activity {
                 }
                 else {
                     // successful login, enter app
-                    Intent myIntent = new Intent(LoginActivity.this, HomeActivity.class);
-                    myIntent.putExtra("ResponseJson", jsonString); //Optional parameters
-                    LoginActivity.this.startActivity(myIntent);
-                    finish();
+                    enterApp(jsonString);
+                    //finish();
                 }
             } catch (JSONException e) { e.printStackTrace(); }
 
@@ -164,6 +171,17 @@ public class LoginActivity extends Activity {
     private void showProgress(final boolean show) {
         mLoginStatusView.setVisibility(show ? View.VISIBLE : View.GONE);
         mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+    }
+
+    private void enterApp(String jsonString) {
+        Intent myIntent = new Intent(LoginActivity.this, HomeActivity.class);
+        myIntent.putExtra("ResponseJson", jsonString);
+        LoginActivity.this.startActivity(myIntent);
+    }
+
+    private void goToRegister() {
+        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+        LoginActivity.this.startActivity(intent);
     }
 
     @Override

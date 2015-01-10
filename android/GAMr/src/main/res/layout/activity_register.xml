@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/login_form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout style="@style/LoginFormContainer"
+                  android:orientation="vertical">
+
+        <EditText
+                android:id="@+id/register_username"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:maxLength="16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username" />
+
+        <EditText
+                android:id="@+id/register_password"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:maxLength="16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_password"
+                android:inputType="textPassword"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeActionId="@+id/register_password"
+                android:imeOptions="actionUnspecified" />
+
+        <EditText
+                android:id="@+id/register_description"
+                android:lines="5"
+                android:minLines="1"
+                android:gravity="top|left"
+                android:maxLines="10"
+                android:scrollbars="none"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLength="140"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="A short description of yourself"
+                android:layout_gravity="center"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Platforms:"
+                android:id="@+id/platforms_label"
+                android:layout_gravity="left|center_vertical"/>
+
+        <LinearLayout
+                android:id="@+id/platforms"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left|center_vertical">
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Genres:"
+                android:id="@+id/genres_label"
+                android:layout_gravity="left|center_vertical"/>
+
+        <LinearLayout
+                android:id="@+id/genres"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="left|center_vertical">
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Games:"
+                android:id="@+id/games_label"
+                android:layout_gravity="left|center_vertical"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+            <EditText
+                    android:id="@+id/games_search"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:maxLength="64"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter games you play" />
+            <Button android:id="@+id/add_class_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add" />
+        </LinearLayout>
+
+        <TextView android:id="@+id/games_listing"
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:layout_gravity="center_vertical" />
+
+        <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/seriousness_slider"
+                android:layout_gravity="left|center_vertical"
+                android:progress="50"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+            <TextView android:id="@+id/casual_label"
+                      android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:layout_alignParentLeft="true"
+                      android:text="Casual"
+                      android:textColor="#CCCCCC" />
+
+            <TextView android:id="@+id/seriousness_label"
+                      android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:layout_centerHorizontal="true"
+                      android:text="(Your Rating Here)"
+                      android:textColor="#AAAAAA" />
+
+            <TextView android:id="@+id/hardcore_label"
+                      android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:layout_alignParentRight="true"
+                      android:text="Hardcore"
+                      android:textColor="#CCCCCC" />
+
+        </RelativeLayout>
+        <Button android:id="@+id/create_user_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Create Account"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:layout_gravity="right" />
+
+    </LinearLayout>
+
+</ScrollView>

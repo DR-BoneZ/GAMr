@@ -12,6 +12,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.gamr.gamr.HomeActivity"/>
+        <activity android:name="com.gamr.gamr.RegisterActivity"/>
     </application>
 
 </manifest>
