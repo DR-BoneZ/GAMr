@@ -21,6 +21,9 @@ def getGetUserInfo(user):
 		retjson = '{"error":"404", "description":"Not Found: The specified user does not exist"}'
 	return retjson
 
+def orderByMiscQuals(arr):
+	return arr
+
 @app.route("/")
 def root():
 	return '{"error":"404", "description":"Not Found: The specified user does not exist"}'
@@ -80,7 +83,12 @@ def delUser(user):
 
 @app.route("/post", methods=['GET', 'POST'])
 def search():
-	return '{"error":"500", "description":"Internal Server Error: This feature isn\'t implemented yet. Check back later."}'
+	conn = psycopg2.connect("dbname=gamr user=gamr")
+	cur = conn.cursor()
+	cur.execute("SELECT * FROM posts WHERE PLTorTLP = '" + request.form['PLTorTLP'] + "'" + (", platform = '" + request.form['platform'] + "'" if request.form['platform'] else "") + (", game = '" + request.form['game'] + "'" if request.form['game'] else "") + (", genre = '" + request.form['genre'] + "'" if request.form['genre'] else "") + (", username = '" + request.form['username'] + "'" if request.form['username'] else "") + " ORDER BY abs(seriousness - " + request.form['seriousness'] + ") ASC, reputation DESC;")
+	ret = cur.fetchall()
+	ret = orderByMiscQuals(ret)
+	return json.dumps(ret)
 
 @app.route("/post/add", methods=['POST'])
 def addPost():
