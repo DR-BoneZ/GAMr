@@ -45,7 +45,7 @@ def getUserInfo(user):
 			#print errortxt
 			return '{"error":"404", "description":"Not Found: The specified username and password combination are invalid."}'
 
-@app.route("/add/user/<user>", methods=['POST'])
+@app.route("/user/add/<user>", methods=['POST'])
 def newUser(user):
 	if (json.loads(getGetUserInfo(user))["error"] == "404"):
 		adduser(user, request.form['password'], request.form['description'], request.form['games'], request.form['platforms'], request.form['genres'], request.form['seriousness'], request.form['reputation'], request.form['miscQuals'])
@@ -53,7 +53,7 @@ def newUser(user):
 	else:
 		return '{"error":"420", "description":"Method Failure: The specified username already exists."}'
 
-@app.route("/edit/user/<user>", methods=['PUT'])
+@app.route("/user/edit/<user>", methods=['PUT'])
 def editUser(user):
 	conn = psycopg2.connect("dbname=gamr user=gamr")
 	cur = conn.cursor()
@@ -61,6 +61,17 @@ def editUser(user):
 	ret = cur.fetchone()
 	if (ret != None and ret[1] == request.form['password']):
 		cur.execute("UPDATE users SET " + json.dumps(request.form).replace('{"', '').replace('": "', ' = "').replace('", "', '", ').replace('"}', '"').replace('"', "'") + " WHERE username = '" + user + "';")
+		conn.commit()
+	return getGetUserInfo(user)
+
+@app.route("/user/del/<user>", methods=['POST'])
+def delUser(user):
+	conn = psycopg2.connect("dbname=gamr user=gamr")
+	cur = conn.cursor()
+	cur.execute("SELECT * FROM users WHERE username = '" + user + "';")
+	ret = cur.fetchone()
+	if (ret != None and ret[1] == request.form['password']):
+		cur.execute("DELETE FROM users WHERE username = '" + user + "';")
 		conn.commit()
 	return getGetUserInfo(user)
 
