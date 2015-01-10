@@ -2,56 +2,54 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/src/main/res" >
+        <source path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res" >
             <file
                 name="ic_launcher"
-                path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/src/main/res/drawable-hdpi/ic_launcher.png"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/drawable-hdpi/ic_launcher.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="ic_launcher"
-                path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/src/main/res/drawable-mdpi/ic_launcher.png"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/drawable-mdpi/ic_launcher.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="ic_launcher"
-                path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/src/main/res/drawable-xhdpi/ic_launcher.png"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/drawable-xhdpi/ic_launcher.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="activity_login"
-                path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/src/main/res/layout/activity_login.xml"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/activity_login.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="login"
-                path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/src/main/res/menu/login.xml"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/menu/login.xml"
                 qualifiers=""
                 type="menu" />
             <file
-                path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/src/main/res/values/strings.xml"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/values/strings.xml"
                 qualifiers="" >
                 <string name="app_name" >GAMr
                 </string>
             </file>
             <file
-                path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/src/main/res/values/strings_activity_login.xml"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/values/strings_activity_login.xml"
                 qualifiers="" >
                 <string name="error_field_required" >This field is required
                 </string>
                 <string name="error_invalid_email" >This email address is invalid
                 </string>
-                <string name="login_progress_signing_in" >Signing in…
-                </string>
-                <string name="action_sign_in_register" ><b>
-Sign in
-                    </b> or register
-                </string>
                 <string name="prompt_email" >Email
                 </string>
-                <string name="action_sign_in_short" >Sign in
+                <string name="action_sign_in_register" >Sign in
+                </string>
+                <string name="login_progress_signing_in" >Signing in…
                 </string>
                 <string name="prompt_password" >Password
+                </string>
+                <string name="action_sign_in_short" >Sign in
                 </string>
                 <string name="error_incorrect_password" >This password is incorrect
                 </string>
@@ -61,7 +59,7 @@ Sign in
                 </string>
             </file>
             <file
-                path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/src/main/res/values/styles.xml"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/values/styles.xml"
                 qualifiers="" >
 
                 <style
@@ -95,7 +93,7 @@ wrap_content
                 </style>
             </file>
             <file
-                path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/src/main/res/values-large/styles.xml"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/values-large/styles.xml"
                 qualifiers="large" >
 
                 <style name="LoginFormContainer" >
@@ -114,7 +112,7 @@ center
                 </style>
             </file>
             <file
-                path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/src/main/res/values-v11/styles.xml"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/values-v11/styles.xml"
                 qualifiers="v11" >
 
                 <style
@@ -125,7 +123,7 @@ center
                 </style>
             </file>
             <file
-                path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/src/main/res/values-v14/styles.xml"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/values-v14/styles.xml"
                 qualifiers="v14" >
 
                 <style
@@ -135,11 +133,16 @@ center
                     <!-- API 14 theme customizations can go here. -->
                 </style>
             </file>
+            <file
+                name="activity_home"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/activity_home.xml"
+                qualifiers=""
+                type="layout" />
         </source>
-        <source path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/build/res/rs/debug" />
+        <source path="/Users/beni/dev/gamr/GAMr/android/GAMr/build/res/rs/debug" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/src/debug/res" />
+        <source path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/debug/res" />
     </dataSet>
 
 </merger>

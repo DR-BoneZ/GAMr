@@ -2,10 +2,10 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/src/main/assets" />
+        <source path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/assets" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/beni/AndroidStudioProjects/GAMrProject/GAMr/src/debug/assets" />
+        <source path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/debug/assets" />
     </dataSet>
 
 </merger>
