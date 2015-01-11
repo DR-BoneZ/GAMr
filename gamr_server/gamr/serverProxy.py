@@ -21,8 +21,31 @@ def getGetUserInfo(user):
 		retjson = '{"error":"404", "description":"Not Found: The specified user does not exist"}'
 	return retjson
 
-def orderByMiscQuals(arr):
-	return arr
+def matchedQuals(queryJSON, resultJSON, game):
+	matched = 0
+	query = json.loads(queryJSON)[game]
+	result = json.loads(resultJSON)[game]
+	for key in query.keys():
+		if query[key].startswith("Rng("):
+			if int(query[key].replace('Rng(', '').split('-')[0]) <= result[key] <= int(query[key].replace('Rng(', '').split('-')[1]):
+				matched += 1
+		else:
+			if query[key] == result[key]:
+				matched += 1
+	return matched
+
+def orderByMiscQuals(arr, miscQuals, game):
+	newArr = [];
+	for post in arr:
+		x = matchedQuals(miscQuals, post['miscQuals'], game)
+		for i in range(0, len(newArr)):
+			if newArr[i]:
+				if x > matchedQuals(miscQuals, newArr[i]['miscQuals'], game):
+					newArr.insert(i, post)
+					break
+			else:
+				newArr[i] = post
+	return newArr
 
 @app.route("/")
 def root():
@@ -81,13 +104,16 @@ def delUser(user):
 		conn.commit()
 	return getGetUserInfo(user)
 
-@app.route("/post", methods=['GET', 'POST'])
+@app.route("/post", methods=['POST'])
 def search():
 	conn = psycopg2.connect("dbname=gamr user=gamr")
 	cur = conn.cursor()
-	cur.execute("SELECT * FROM posts WHERE PLTorTLP = '" + request.form['PLTorTLP'] + "'" + (", platform = '" + request.form['platform'] + "'" if request.form['platform'] else "") + (", game = '" + request.form['game'] + "'" if request.form['game'] else "") + (", genre = '" + request.form['genre'] + "'" if request.form['genre'] else "") + (", username = '" + request.form['username'] + "'" if request.form['username'] else "") + " ORDER BY abs(seriousness - " + request.form['seriousness'] + ") ASC, reputation DESC;")
+	form = request.form
+	cur.execute("SELECT * FROM posts WHERE PLTorTLP = '" + form['PLTorTLP'] + "'" + (", platform = '" + form['platform'] + "'" if 'platform' in form else "") + (", game = '" + form['game'] + "'" if 'game' in form else "") + (", genre = '" + form['genre'] + "'" if 'genre' in form else "") + (", username = '" + form['username'] + "'" if 'username' in form else "") + " ORDER BY " + ("abs(seriousness - " + form['seriousness'] + ")" if 'seriousness' in form else "") + " ASC, reputation DESC;")
+	#cur.execute("SELECT * FROM posts WHERE PLTorTLP = '" + request.form['PLTorTLP'] + "'" + (", platform = '" + request.form['platform'] + "'" if request.form['platform'] else "") + (", game = '" + request.form['game'] + "'" if request.form['game'] else "") + (", genre = '" + request.form['genre'] + "'" if request.form['genre'] else "") + (", username = '" + request.form['username'] + "'" if request.form['username'] else "") + " ORDER BY abs(seriousness - " + request.form['seriousness'] + ") ASC, reputation DESC;")
 	ret = cur.fetchall()
-	ret = orderByMiscQuals(ret)
+	if 'game' in form and 'miscQuals' in form:
+		ret = orderByMiscQuals(ret, request.form['miscQuals'], request.form['game'])
 	return json.dumps(ret)
 
 @app.route("/post/add", methods=['POST'])
@@ -125,6 +151,8 @@ def delPost():
 		return getMyPosts()
 	else:
 		return '{"error":"404", "description":"Not Found: The specified username and password combination are invalid."}'
+
+
 
 #print(getUserInfo("BoneZ"))
 
