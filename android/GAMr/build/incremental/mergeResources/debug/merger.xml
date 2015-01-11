@@ -9,6 +9,11 @@
                 qualifiers="hdpi"
                 type="drawable" />
             <file
+                name="login_logo"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/drawable-hdpi/login_logo.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/drawable-mdpi/ic_launcher.png"
                 qualifiers="mdpi"
@@ -19,8 +24,33 @@
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
+                name="activity_home"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/activity_home.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="activity_login"
                 path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/activity_login.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_register"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/activity_register.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_view_profile"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/activity_view_profile.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_post"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/fragment_post.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_search"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/fragment_search.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -28,6 +58,21 @@
                 path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/menu/login.xml"
                 qualifiers=""
                 type="menu" />
+            <file
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/values/search_spinner.xml"
+                qualifiers="" >
+                <string-array name="search_spinner_array" >
+                    <item>
+Game Title
+                    </item>
+                    <item>
+Username
+                    </item>
+                    <item>
+Genre
+                    </item>
+                </string-array>
+            </file>
             <file
                 path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/values/strings.xml"
                 qualifiers="" >
@@ -41,15 +86,15 @@
                 </string>
                 <string name="error_invalid_email" >This email address is invalid
                 </string>
-                <string name="login_progress_signing_in" >Signing in…
+                <string name="prompt_email" >Email
                 </string>
                 <string name="action_sign_in_register" >Sign in
                 </string>
-                <string name="prompt_email" >Email
-                </string>
-                <string name="action_sign_in_short" >Sign in
+                <string name="login_progress_signing_in" >Signing in…
                 </string>
                 <string name="prompt_password" >Password
+                </string>
+                <string name="action_sign_in_short" >Sign in
                 </string>
                 <string name="error_incorrect_password" >This password is incorrect
                 </string>
@@ -134,50 +179,15 @@ center
                 </style>
             </file>
             <file
-                name="activity_home"
-                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/activity_home.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="activity_register"
-                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/activity_register.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="login_logo"
-                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/drawable-hdpi/login_logo.png"
+                name="seal"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/drawable-hdpi/seal.jpg"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
-                name="activity_view_profile"
-                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/activity_view_profile.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="fragment_search"
-                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/fragment_search.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="fragment_post"
-                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/fragment_post.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/values/search_spinner.xml"
-                qualifiers="" >
-                <string-array name="search_spinner_array" >
-                    <item>
-Game Title
-                    </item>
-                    <item>
-Username
-                    </item>
-                    <item>
-Genre
-                    </item>
-                </string-array>
-            </file>
+                name="logo"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/drawable-hdpi/logo.png"
+                qualifiers="hdpi"
+                type="drawable" />
         </source>
         <source path="/Users/beni/dev/gamr/GAMr/android/GAMr/build/res/rs/debug" />
     </dataSet>

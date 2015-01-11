@@ -131,7 +131,8 @@ public class LoginActivity extends Activity {
 
             try {
                 // Add login credentials to post data
-                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
+                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+                nameValuePairs.add(new BasicNameValuePair("username", mUsername));
                 nameValuePairs.add(new BasicNameValuePair("password", mPassword));
                 httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
     <EditText
             android:layout_width="match_parent"
@@ -13,12 +12,12 @@
             android:layout_gravity="center"/>
 
     <SeekBar
-        android:id="@+id/search_seriousness"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/search_query"
-        android:layout_alignParentLeft="true"
-        android:indeterminate="false"/>
+            android:id="@+id/search_seriousness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/search_query"
+            android:layout_alignParentLeft="true"
+            android:indeterminate="false"/>
 
     <Spinner
             android:layout_width="wrap_content"
@@ -41,7 +40,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Search Type:"
             android:id="@+id/textView"
-            android:layout_below="@+id/search_seriousness"
+            android:layout_below="@+id/search_seriousness_label"
             android:layout_alignParentLeft="true"/>
 
     <LinearLayout
@@ -56,7 +55,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="1"
             android:id="@+id/search_seriousness_label"
-            android:layout_alignBottom="@+id/search_seriousness"
+            android:layout_below="@+id/search_seriousness"
             android:layout_centerHorizontal="true"/>
 
     <RadioGroup
@@ -82,5 +81,16 @@
                 android:layout_gravity="left|center_vertical"
                 android:checked="false"/>
     </RadioGroup>
-
+    <LinearLayout android:id="@+id/search_miscquals_pane"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/search_plt_or_tlp"
+                  android:orientation="vertical"
+                  android:visibility="gone">
+        <TextView android:id="@+id/search_miscquals_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Miscellaneous Qualifications:"/>
+    </LinearLayout>
 </RelativeLayout>

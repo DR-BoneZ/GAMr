@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 public class PostFragment extends Fragment {
 
     @Override
-    public void onCreate (Bundle savedInstanceState) { super.onCreate(savedInstanceState); }
+    public void onCreate (Bundle savedInstanceState) { super.onCreate(savedInstanceState); }// post is dict of id username description, game, platform, genre, srsns, reputation, plt/tlp, miscquals, replies
 
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

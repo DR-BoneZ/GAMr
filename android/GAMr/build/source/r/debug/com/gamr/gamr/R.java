@@ -16,19 +16,22 @@ public final class R {
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
         public static final int login_logo=0x7f020001;
+        public static final int logo=0x7f020002;
+        public static final int seal=0x7f020003;
     }
     public static final class id {
-        public static final int action_forgot_password=0x7f08002b;
+        public static final int action_forgot_password=0x7f08002e;
         public static final int add_class_btn=0x7f080013;
         public static final int casual_label=0x7f080016;
         public static final int create_user_button=0x7f080019;
-        public static final int folowup_container=0x7f080028;
+        public static final int folowup_container=0x7f08002a;
         public static final int games_label=0x7f080011;
         public static final int games_listing=0x7f080014;
         public static final int games_search=0x7f080012;
         public static final int genres=0x7f080010;
         public static final int genres_label=0x7f08000f;
         public static final int hardcore_label=0x7f080018;
+        public static final int imageView=0x7f080022;
         public static final int login=0x7f080006;
         public static final int loginLogo=0x7f080009;
         public static final int login_form=0x7f080003;
@@ -43,17 +46,19 @@ public final class R {
         public static final int register_password=0x7f08000b;
         public static final int register_username=0x7f08000a;
         public static final int response_text=0x7f080000;
-        public static final int search_button=0x7f080027;
-        public static final int search_plt=0x7f08002a;
-        public static final int search_plt_or_tlp=0x7f080026;
-        public static final int search_query=0x7f080023;
-        public static final int search_seriousness=0x7f080024;
+        public static final int search_button=0x7f080028;
+        public static final int search_miscquals_label=0x7f08002d;
+        public static final int search_miscquals_pane=0x7f08002c;
+        public static final int search_plt=0x7f08002b;
+        public static final int search_plt_or_tlp=0x7f080027;
+        public static final int search_query=0x7f080024;
+        public static final int search_seriousness=0x7f080025;
         public static final int search_seriousness_label=0x7f080029;
-        public static final int search_spinner=0x7f080025;
+        public static final int search_spinner=0x7f080026;
         public static final int seriousness_label=0x7f080017;
         public static final int seriousness_slider=0x7f080015;
         public static final int sign_in_button=0x7f080007;
-        public static final int textView=0x7f080022;
+        public static final int textView=0x7f080023;
         public static final int username_login=0x7f080004;
         public static final int view_profile_description=0x7f08001c;
         public static final int view_profile_games=0x7f08001f;
