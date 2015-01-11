@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
     <style
         name="AppBaseTheme"
         parent="android:Theme.Light" >
-
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
     </style>
 
     <!-- Application theme. -->
@@ -21,8 +10,23 @@
         name="AppTheme"
         parent="AppBaseTheme" >
 
+        <item name="android:colorBackground">@color/purple</item>
+        <!--   darker variant for the status bar and contextual app bars -->
+        <!--<item name="android:colorBackground">/</item>-->
+        <!--   theme UI controls like checkboxes and text fields -->
+        <!--<item name="android:colorAccent">@color/accent</item>-->
+
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+
+    <style name="MyActionBar"
+           parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/purple</item>
+        <item name="android:textColor">@color/green</item>
+    </style>
+
     <style name="LoginFormContainer" >
         <item name="android:layout_width">
 match_parent

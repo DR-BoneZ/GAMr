@@ -14,6 +14,16 @@
                 qualifiers="hdpi"
                 type="drawable" />
             <file
+                name="logo"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/drawable-hdpi/logo.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="seal"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/drawable-hdpi/seal.jpg"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/drawable-mdpi/ic_launcher.png"
                 qualifiers="mdpi"
@@ -86,15 +96,15 @@ Genre
                 </string>
                 <string name="error_invalid_email" >This email address is invalid
                 </string>
-                <string name="prompt_email" >Email
+                <string name="login_progress_signing_in" >Signing in…
                 </string>
                 <string name="action_sign_in_register" >Sign in
                 </string>
-                <string name="login_progress_signing_in" >Signing in…
-                </string>
-                <string name="prompt_password" >Password
+                <string name="prompt_email" >Email
                 </string>
                 <string name="action_sign_in_short" >Sign in
+                </string>
+                <string name="prompt_password" >Password
                 </string>
                 <string name="error_incorrect_password" >This password is incorrect
                 </string>
@@ -110,12 +120,6 @@ Genre
                 <style
                     name="AppBaseTheme"
                     parent="android:Theme.Light" >
-
-                    <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-                    -->
                 </style>
 
                 <style name="LoginFormContainer" >
@@ -133,8 +137,30 @@ wrap_content
                 <style
                     name="AppTheme"
                     parent="AppBaseTheme" >
+                    <item name="android:colorBackground">
+@color/purple
+                    </item>
+                    <!-- darker variant for the status bar and contextual app bars -->
+                    <!-- <item name="android:colorBackground">/</item> -->
+                    <!-- theme UI controls like checkboxes and text fields -->
+                    <!-- <item name="android:colorAccent">@color/accent</item> -->
+
+                    <item name="android:actionBarStyle">
+@style/MyActionBar
+                    </item>
 
                     <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+
+                <style
+                    name="MyActionBar"
+                    parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse" >
+                    <item name="android:background">
+@color/purple
+                    </item>
+                    <item name="android:textColor">
+@color/green
+                    </item>
                 </style>
             </file>
             <file
@@ -179,15 +205,15 @@ center
                 </style>
             </file>
             <file
-                name="seal"
-                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/drawable-hdpi/seal.jpg"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="logo"
-                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/drawable-hdpi/logo.png"
-                qualifiers="hdpi"
-                type="drawable" />
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/values/color.xml"
+                qualifiers="" >
+                <color name="green" >#77DC77
+                </color>
+                <color name="purple" >#2a0761
+                </color>
+                <color name="orange" >#FF9912
+                </color>
+            </file>
         </source>
         <source path="/Users/beni/dev/gamr/GAMr/android/GAMr/build/res/rs/debug" />
     </dataSet>

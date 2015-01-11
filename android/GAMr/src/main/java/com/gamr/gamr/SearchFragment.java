@@ -92,7 +92,27 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser) {
                 seriousness = Math.round(progress / 25) + 1;
-                seriousnessLabel.setText(""+seriousness);
+                String seriousnessText = "";
+                switch(seriousness) {
+                    case 1:
+                        seriousnessText="Casual";
+                        break;
+                    case 2:
+                        seriousnessText="Semi-Casual";
+                        break;
+                    case 3:
+                        seriousnessText="Average";
+                        break;
+                    case 4:
+                        seriousnessText="Semi-Hardcore";
+                        break;
+                    case  5:
+                        seriousnessText="Hardcore";
+                        break;
+                    default:
+                        break;
+                }
+                seriousnessLabel.setText(seriousnessText);
             }
         });
 

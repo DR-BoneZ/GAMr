@@ -7,6 +7,9 @@
         <item>Genre</item>
     </string-array>
 
+    <color name="green">#77DC77</color>
+    <color name="purple">#2a0761</color>
+
     <string name="action_forgot_password">Recover lost password</string>
     <string name="action_sign_in_register">Sign in</string>
     <string name="action_sign_in_short">Sign in</string>
@@ -19,15 +22,17 @@
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
 
-    <style name="AppBaseTheme" parent="android:Theme.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
-    </style>
+    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
 
     <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:colorBackground">@color/purple</item>
+        <!-- darker variant for the status bar and contextual app bars -->
+        <!-- <item name="android:colorBackground">/</item> -->
+        <!-- theme UI controls like checkboxes and text fields -->
+        <!-- <item name="android:colorAccent">@color/accent</item> -->
+
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
@@ -35,6 +40,11 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/purple</item>
+        <item name="android:textColor">@color/green</item>
     </style>
 
 </resources>
