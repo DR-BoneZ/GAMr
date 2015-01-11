@@ -160,11 +160,12 @@ def delPost():
 	else:
 		return '{"error":"404", "description":"Not Found: The specified username and password combination are invalid."}'
 
-@app.route("/miscquals/<game_title>", methods=['GET'])
+@app.route("/miscquals/<game_title>", methods=['GET', 'POST'])
 def getTitle(game_title):
 	obj = open('titles.json', 'r')
 	decoded_title= json.load(obj)
 	final_title= json.dumps(decoded_title[game_title])
+	print final_title
 	return final_title
 
 #print(getUserInfo("BoneZ"))
