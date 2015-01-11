@@ -147,6 +147,7 @@ def getMyPosts():
 		ret = '{"error":"404", "description":"Not Found: The specified username and password combination are invalid."}'
 	return ret
 
+
 @app.route("/post/del", methods=['POST'])
 def delPost():
 	conn = psycopg2.connect("dbname=gamr user=gamr")
