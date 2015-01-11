@@ -41,15 +41,15 @@
                 </string>
                 <string name="error_invalid_email" >This email address is invalid
                 </string>
-                <string name="prompt_email" >Email
+                <string name="login_progress_signing_in" >Signing in…
                 </string>
                 <string name="action_sign_in_register" >Sign in
                 </string>
-                <string name="login_progress_signing_in" >Signing in…
-                </string>
-                <string name="prompt_password" >Password
+                <string name="prompt_email" >Email
                 </string>
                 <string name="action_sign_in_short" >Sign in
+                </string>
+                <string name="prompt_password" >Password
                 </string>
                 <string name="error_incorrect_password" >This password is incorrect
                 </string>
@@ -148,6 +148,36 @@ center
                 path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/drawable-hdpi/login_logo.png"
                 qualifiers="hdpi"
                 type="drawable" />
+            <file
+                name="activity_view_profile"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/activity_view_profile.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_search"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/fragment_search.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_post"
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/layout/fragment_post.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/Users/beni/dev/gamr/GAMr/android/GAMr/src/main/res/values/search_spinner.xml"
+                qualifiers="" >
+                <string-array name="search_spinner_array" >
+                    <item>
+Game Title
+                    </item>
+                    <item>
+Username
+                    </item>
+                    <item>
+Genre
+                    </item>
+                </string-array>
+            </file>
         </source>
         <source path="/Users/beni/dev/gamr/GAMr/android/GAMr/build/res/rs/debug" />
     </dataSet>

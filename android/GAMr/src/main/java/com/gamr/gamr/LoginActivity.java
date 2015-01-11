@@ -177,6 +177,7 @@ public class LoginActivity extends Activity {
         Intent myIntent = new Intent(LoginActivity.this, HomeActivity.class);
         myIntent.putExtra("ResponseJson", jsonString);
         LoginActivity.this.startActivity(myIntent);
+        finish();
     }
 
     private void goToRegister() {

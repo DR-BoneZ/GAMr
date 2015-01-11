@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Username"
+            android:id="@+id/view_profile_username"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="This is the user's description. It will be a few sentences."
+            android:id="@+id/profile_view_description"
+            android:layout_below="@+id/view_profile_description"
+            android:layout_alignLeft="@+id/view_profile_username"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Platforms"
+            android:id="@+id/view_profile_platforms"
+            android:layout_below="@+id/profile_view_description"
+            android:layout_alignLeft="@+id/profile_view_description"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Genres"
+            android:id="@+id/view_profile_genres"
+            android:layout_below="@+id/view_profile_platforms"
+            android:layout_alignLeft="@+id/view_profile_platforms"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Games"
+            android:id="@+id/view_profile_games"
+            android:layout_below="@+id/view_profile_genres"
+            android:layout_alignLeft="@+id/view_profile_genres"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Seriousness"
+            android:id="@+id/view_profile_seriousness"
+            android:layout_below="@+id/view_profile_games"
+            android:layout_alignLeft="@+id/view_profile_games"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Miscellaneous Qualities"
+            android:id="@+id/view_profile_miscQuals"
+            android:layout_below="@+id/view_profile_seriousness"
+            android:layout_alignLeft="@+id/view_profile_seriousness"/>
+</RelativeLayout>

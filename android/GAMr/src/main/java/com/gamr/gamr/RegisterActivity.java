@@ -172,22 +172,22 @@ public class RegisterActivity extends Activity {
                 // description
                 nameValuePairs.add(new BasicNameValuePair("description", description));
                 // platforms
-                String platformsJson = "['";
-                for(String platform : platforms) platformsJson += platform + "','";
+                String platformsJson = "[\"";
+                for(String platform : platforms) platformsJson += platform + "\",\"";
                 platformsJson = platformsJson.substring(0, platformsJson.length()-2) + "]";
                 Log.d("gamr", platformsJson);
                 if(platforms.size()==0) platformsJson = "[]";
                 nameValuePairs.add(new BasicNameValuePair("platforms", platformsJson));
                 // genres
-                String genresJson = "['";
-                for(String genre : genres) genresJson += genre + "','";
+                String genresJson = "[\"";
+                for(String genre : genres) genresJson += genre + "\",\"";
                 genresJson = genresJson.substring(0, genresJson.length()-2) + "]";
                 Log.d("gamr", genresJson);
                 if(genres.size()==0) genresJson = "[]";
                 nameValuePairs.add(new BasicNameValuePair("genres", genresJson));
                 // games
-                String gamesJson = "['";
-                for(String game : games) gamesJson += game + "','";
+                String gamesJson = "[\"";
+                for(String game : games) gamesJson += game + "\",\"";
                 gamesJson = gamesJson.substring(0, gamesJson.length()-2) + "]";
                 Log.d("gamr", gamesJson);
                 if(games.size()==0) gamesJson = "[]";
@@ -218,10 +218,15 @@ public class RegisterActivity extends Activity {
             try {
                 JSONObject resultJson = new JSONObject(jsonString);
                 if(resultJson.has("error")) {
-                    // Username already taken, display error message
-                    //showProgress(false);
-                    userNameField.setError("Username already taken. Please choose another");
-                    userNameField.requestFocus();
+                    if(resultJson.get("error")=="403") {
+                        // Username contains illegal characters, display error message
+                        userNameField.setError("Username contains illegal characters. Please choose another");
+                    }
+                    else {
+                        // Username already taken, display error message
+                        userNameField.setError("Username already taken. Please choose another");
+                        userNameField.requestFocus();
+                    }
                 }
                 else {
                     // User created successfully, enter app
@@ -236,5 +241,6 @@ public class RegisterActivity extends Activity {
         Intent myIntent = new Intent(RegisterActivity.this, HomeActivity.class);
         myIntent.putExtra("ResponseJson", jsonString);
         RegisterActivity.this.startActivity(myIntent);
+        finish();
     }
 }
