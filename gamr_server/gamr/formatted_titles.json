@@ -1,0 +1,86 @@
+{ "Banner Saga" : { "class" : "Combo Box (Spearman, Shieldbanger, Landsman, Raider, Archer, Warrior)" },
+  "Battlefield 1943" : { "class" : "Combo Box (Rifleman, Sniper, Infantry)" },
+  "Battlefield 2" : { "game type" : "Combo box (Conquest, Rush, Squad Deathmatch, Squad rush, Team Death Match)",
+      "level" : "Numeric"
+    },
+  "Battlefield 3" : { "game type" : "Combo Box (Conquest, Rush, Squad Deathmatch, Squad rush, Team Death Match)",
+      "level" : "Numeric"
+    },
+  "Bravely Default" : { "job" : "Combo box (Monk, White Mage, Black Mage, Knight, Thief Merchant, Spell Fencer, Time Mage, Ranger, Summoner, Valkyrie, Red Mage, Pirate, Salve-Maker, Performer, Swordmaster, Ninja, Arcanist, Spiritmaster, Templar, Vampire, Dark Knight, Conjurer)" },
+  "Call of Duty Advance Warfare" : { "Prestige" : "Numeric",
+      "game type" : "Combo Box (Free-For-All, Search & Destroy, Demolition, Sabotage, Domination, Team Deathmatch, Mercenary Team Deathmatch, Headquarters, and Capture The Flag)",
+      "level" : "Numeric"
+    },
+  "Call of Duty Black Ops 2" : { "game type" : "Combo Box (Free-For-All, Search & Destroy, Demolition, Sabotage, Domination, Team Deathmatch, Mercenary Team Deathmatch, Headquarters, and Capture The Flag)",
+      "level" : "Numeric",
+      "prestige" : "Numeric"
+    },
+  "Call of Duty Black Ops" : { "game type" : "Combo Box (Free-For-All, Search & Destroy, Demolition, Sabotage, Domination, Team Deathmatch, Mercenary Team Deathmatch, Headquarters, and Capture The Flag)",
+      "level" : "Numeric",
+      "prestige" : "Numeric"
+    },
+  "Call of Duty Modern Warfare 2" : { "game type" : "Combo Box (Free-For-All, Search & Destroy, Demolition, Sabotage, Domination, Team Deathmatch, Mercenary Team Deathmatch, Headquarters, and Capture The Flag)",
+      "level" : "Numeric",
+      "prestige" : "Numeric"
+    },
+  "Call of Duty Modern Warfare 3" : { "game type" : "Combo Box (Free-For-All, Search & Destroy, Demolition, Sabotage, Domination, Team Deathmatch, Mercenary Team Deathmatch, Headquarters, and Capture The Flag)",
+      "level" : "Numeric",
+      "prestige" : "Numeric"
+    },
+  "Child of Light" : { "characters" : "Combo Box (Aurora, Igniculus, Finn, Oengus, The Oculist, Robert, Umbra)" },
+  "Dark Souls II" : { "class" : "Combo Box (Warrior, Knight, Swordsman, Bandit, Cleric, Sorcerer, Explorer, Deprived)" },
+  "Deep Down" : { "class" : "Combo Box (Knight, Mage, Archer)" },
+  "Diablo III: Reaper of Souls" : { "class" : "Combo Box  (Barbarian, Witch Doctor, Wizard, Monk, Demon Hunter, Crusader, Archivist)",
+      "level" : "Numeric"
+    },
+  "Dragon Age: Inquisition" : { "Class" : "Combo Box (Knight-Enchanter, Rift Mage, Artificer, Tempest, Assassin, champion, reaver)" },
+  "EVE online" : {  },
+  "Final Fantasy XIII" : { "characters" : "Combo Box (Lightning, Lumina, Snow Villiers, Hope Estheim, Noel Kreiss, Oerba Dia Vanille, Oerba Yun Fang)" },
+  "Final Fantasy XIV: A Realm Reborn" : { "class" : "Combo Box (tank, ranged, melee, caster, healer)",
+      "gameplay" : "Combo Box (pve, pvp)",
+      "level" : "Numeric (1-50)"
+    },
+  "Gotham City Impostors" : { "class" : "Combo Box (Striker, Scout, Defender, Medic, Sniper)" },
+  "Guild Wars 2" : { "gameplay" : "Combo Box (pve, pvp)",
+      "level" : "Numeric",
+      "role" : "Combo Box (tank, ranged, melee, cast, support)"
+    },
+  "Hawken" : { "game type" : "Combo Box (Team Deathmatch, Missile Assault, Siege, Deathmatch, Co-op Destruction, Co-op Team Deathmatch, Explore)" },
+  "League of Legends" : { "division" : "Numeric",
+      "role" : "Combo Box (ADC, top, APC, jungle, support)",
+      "tier" : "Combo Box (Bronze, Silver, Gold, Platinum, Diamond, Challenger)"
+    },
+  "Lord of the Rings Online" : { "level" : "Numeric",
+      "role" : "Combo Box (Tank, Melee, AoE, Ranged, Healer)"
+    },
+  "Neverwinter" : { "class" : "Combo Box (Control Wizard, Devoted Cleric, Great Weapon Fighter, Guardian Fighter, Hunter Ranger, Scourge Warlock, Trickster Rogue)" },
+  "Planetside 2" : { "battle rank" : "Numeric",
+      "class" : "Combo Box (infiltrator, light assult, combat medic, enginneer, heavy assult, max)",
+      "faction" : "Combo Box (Terran Republic, New Conglomerate, Vanu Sovereignty)"
+    },
+  "Rift" : { "faction" : "Combo Box (Guardian, Defiant)",
+      "race" : "Combo Box (Warrior, Cleric, Rogue, Mage)"
+    },
+  "Runescape 3" : { "class" : "Combo Box (Warrior, Ranger, Mage)",
+      "level" : "Numeric"
+    },
+  "Shadow Returns: Berlin" : { "class" : "Combo Box (Street Samurai, Mage, Decker, Shaman, Rigger, Physical Adept)" },
+  "Star Wars: The Old Republic" : { "faction" : "Combo Box (Galactic Republic, Sith Empire)" },
+  "Team Fortress 2" : { "class" : "Combo Box (Scout, Soldier, Pyro, Demoman, Heavy, Engineer, Medic, Sniper, Spy)" },
+  "The Secret World" : { "faction" : "Combo Box (Dragon, Illuminati, Templar)",
+      "gameplay" : "Combo Box (pve, pvp)",
+      "role" : "Combo Box (tank, healer, damage, support)"
+    },
+  "Tom Clancys Ghost Recon Phantoms" : { "class" : "Combo Box( Assault, Recon, Support)" },
+  "Tribes Ascend" : { "class" : "Combo Box (Pathfinder, Sentinel, Infiltrator, Soldier, Technician, Raider, Juggernaut, Doombringer, Brute)" },
+  "Warface" : { "class" : "Combo Box (Rifleman, Medic, Engineer, Sniper)" },
+  "Wasteland2" : { "character" : "Combo Box(Hell Razor, Angela Deth, Thrasher, Snake Vargas)",
+      "faction" : "Combo Box (Small Armed Factions, Large Armed Faction)"
+    },
+  "Wolfenstein: Enemy Territory" : { "class" : "Combo Box (Knife, Pistol, Submachine Gun, Grenade)" },
+  "World of Warcraft" : { "gameplay" : "Combo Box (pve, pvp)",
+      "level" : "Numeric",
+      "role" : "Combo Box (tank, ranged, melee, caster, healer)"
+    },
+  "warhawk" : {  }
+}
