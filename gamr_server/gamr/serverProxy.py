@@ -1,5 +1,5 @@
 from flask import Flask, request
-import psycopg2, json, re
+import psycopg2, json, re, time
 
 app = Flask(__name__)
 
@@ -64,7 +64,13 @@ def getUserInfo(user):
 		cur.execute("SELECT * FROM users WHERE username = '" + user + "';");
 		ret = cur.fetchone();
 		if (ret != None and ret[1] == request.form['password']):
-			retjson = '{ "username":"' + ret[0] + '", "description":"' + ret[2] + '", "games":' + ret[3] + ', "platforms":' + ret[4] + ', "genres":' + ret[5] + ', "seriousness":' + str(ret[6]) + ', "reputation":' + str(ret[7]) + ', "miscQuals":' + ret[8] + ' }'
+			#check for reply to post
+			replies = {};
+			posts = json.loads(getMyPosts())
+			for post in posts:
+				replies[post['id']] = post['replies']
+			replies = json.dumps(replies)
+			retjson = '{ "username":"' + ret[0] + '", "description":"' + ret[2] + '", "games":' + ret[3] + ', "platforms":' + ret[4] + ', "genres":' + ret[5] + ', "seriousness":' + str(ret[6]) + ', "reputation":' + str(ret[7]) + ', "miscQuals":' + ret[8] + ', "replies":' + replies + ' }'
 			#print retjson
 			return retjson
 		else:
@@ -122,10 +128,11 @@ def addPost():
 	cur = conn.cursor()
 	cur.execute("SELECT * FROM users WHERE username = '" + request.form['username'] + "';")
         ret = cur.fetchone()
+	postid = request.form['username'] + "" + str(time.time())
         if (ret != None and ret[1] == request.form['password']):
-		cur.execute("INSERT INTO posts(id, username, description, game, platform, genre, seriousness, reputation, PLTorTLP, miscQuals) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (request.form['username'] + "" + time.gmtime(0), request.form['username'], request.form['description'], request.form['game'], request.form['platform'], request.form['genre'], request.form['seriousness'], request.form['reputation'], request.form['PLTorTLP'], request.form['miscQuals']))
+		cur.execute("INSERT INTO posts(id, username, description, game, platform, genre, seriousness, reputation, PLTorTLP, miscQuals, replies) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (postid, request.form['username'], request.form['description'], request.form['game'], request.form['platform'], request.form['genre'], request.form['seriousness'], request.form['reputation'], request.form['PLTorTLP'], request.form['miscQuals'], '[]'))
 		conn.commit()
-	return request.form['username'] + "" + time.gmtime(0)
+	return postid
 
 @app.route("/post/my", methods=['POST'])
 def getMyPosts():
@@ -152,7 +159,12 @@ def delPost():
 	else:
 		return '{"error":"404", "description":"Not Found: The specified username and password combination are invalid."}'
 
-
+@app.route("/miscquals/<game_title>", methods=['GET'])
+def getTitle(game_title):
+	obj = open('titles.json', 'r')
+	decoded_title= json.load(obj)
+	final_title= json.dumps(decoded_title[game_title])
+	return final_title
 
 #print(getUserInfo("BoneZ"))
 
